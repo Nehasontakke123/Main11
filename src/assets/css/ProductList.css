@@ -11,6 +11,7 @@
     grid-template-columns: repeat(4, 1fr); /* 4 items per row by default */
     gap: 20px;
     justify-content: center;
+  
 }
 
 /* Product Card */

@@ -26,7 +26,6 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
   const [openSections, setOpenSections] = useState({});
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [selectedSortOption, setSelectedSortOption] = useState('RECOMMENDED');
-  const [showFilter, setShowFilter] = useState(true);
   const [showNoProductsPopup, setShowNoProductsPopup] = useState(false);
 
   const toggleFilter = () => {
@@ -45,7 +44,7 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
   };
 
   const handleSortSelect = (option) => {
-    setSelectedSort(option); 
+    setSelectedSort(option);
     setSelectedSortOption(option);
     setShowSortDropdown(false);
   };
@@ -54,58 +53,47 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
     setSelectedFilters(prev => {
       const updatedFilters = { ...prev };
       if (!updatedFilters[filter]) updatedFilters[filter] = [];
-      // Toggle the filter option (add/remove)
+
       if (updatedFilters[filter].includes(value)) {
         updatedFilters[filter] = updatedFilters[filter].filter(item => item !== value);
       } else {
         updatedFilters[filter].push(value);
       }
+
       return updatedFilters;
     });
   };
 
-  // Filter products based on selected filters
   const filteredProducts = products.filter(product => {
     return Object.keys(selectedFilters).every(filter => {
       const filterValues = selectedFilters[filter];
-      if (!filterValues || filterValues.length === 0) return true; // No filter for this type
+      if (!filterValues || filterValues.length === 0) return true;
       return filterValues.some(value => product[filter]?.includes(value));
     });
   });
 
-  // Sort filtered products based on selected sort option
   const sortedProducts = filteredProducts.sort((a, b) => {
-    if (selectedSortOption === 'PRICE : HIGH TO LOW') {
-      return b.price - a.price;
-    }
-    if (selectedSortOption === 'PRICE : LOW TO HIGH') {
-      return a.price - b.price;
-    }
-    return 0; // Default sorting, RECOMMENDED, NEWEST FIRST, etc.
+    if (selectedSortOption === 'PRICE : HIGH TO LOW') return b.price - a.price;
+    if (selectedSortOption === 'PRICE : LOW TO HIGH') return a.price - b.price;
+    return 0;
   });
 
-  // Show a popup if no products match the selected filters
   useEffect(() => {
-    if (filteredProducts.length === 0) {
-      setShowNoProductsPopup(true);
-    } else {
-      setShowNoProductsPopup(false);
-    }
+    setShowNoProductsPopup(filteredProducts.length === 0);
   }, [filteredProducts]);
 
   return (
     <div className="filter-wrapper">
       <div className="filter-header">
-        <span><strong>{filteredProducts.length}342 ITEMS</strong></span>
+        <div className="item-count">{filteredProducts.length} ITEMS</div>
         <button className="toggle-btn" onClick={toggleFilter}>
           {isOpen ? '← HIDE FILTER' : '☰ SHOW FILTER'}
         </button>
 
         <div className="sort-dropdown">
-          <span className="recommended" onClick={handleSortClick}>
+          <div className="recommended" onClick={handleSortClick}>
             {selectedSortOption} ▼
-          </span>
-
+          </div>
           {showSortDropdown && (
             <div className="dropdown-menu">
               {sortOptions.map((option, index) => (
@@ -122,9 +110,8 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
         </div>
       </div>
 
-      {/* Show filter sections */}
-      {showFilter && isOpen && (
-        <div className={`sidebar open`}>
+      {isOpen && (
+        <div className="sidebar open">
           <h3>Filters</h3>
           <div className="filter-section">
             {filterSections.map((section, index) => (
@@ -153,14 +140,12 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
         </div>
       )}
 
-      {/* Show popup if no products found */}
       {showNoProductsPopup && (
         <div className="popup">
-          {/* <span>No products found for the selected filters</span> */}
+          {/* <span>No products found for the selected filters.</span> */}
         </div>
       )}
 
-      {/* Display filtered and sorted products */}
       <div className="product-list">
         {sortedProducts.map(product => (
           <div key={product.id} className="product-card">
