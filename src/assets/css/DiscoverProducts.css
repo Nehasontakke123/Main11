@@ -1,0 +1,52 @@
+/* Mobile-first (default) */
+.discover-container {
+    text-align: center;
+    padding: 0rem 1rem 2rem; /* Removed top padding */
+    background-color: #ffffff;
+  }
+  
+  .discover-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0 0.75rem; /* Added top margin for spacing */
+    letter-spacing: 0.5px;
+    color: #222;
+  }
+  
+  .discover-text {
+    max-width: 90%;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    padding: 0;
+  }
+  
+  /* Tablet view (≥600px) */
+  @media (min-width: 600px) {
+    .discover-title {
+      font-size: 2.5rem;
+    }
+  
+    .discover-text {
+      font-size: 1.1rem;
+      max-width: 80%;
+    }
+  }
+  
+  /* Desktop view (≥992px) */
+  @media (min-width: 992px) {
+    .discover-container {
+      padding: 0rem 2rem 4rem; /* No top padding */
+    }
+  
+    .discover-title {
+      font-size: 3rem;
+    }
+  
+    .discover-text {
+      font-size: 1.15rem;
+      max-width: 600px;
+    }
+  }
+  

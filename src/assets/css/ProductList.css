@@ -1,0 +1,129 @@
+/* Product List */
+.product-list {
+    padding: 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row by default */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures that content is spaced evenly */
+    min-height: 350px; /* Prevents cards from shrinking too much */
+    overflow: hidden; /* Prevents text overflow */
+    position: relative; /* For positioning the wishlist icon */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Adds hover effect */
+}
+
+.product-card img {
+    width: 100%;
+    max-height: 200px; /* Ensures image height doesn't exceed 200px */
+    object-fit: contain; /* Ensures the image fits within its container without cutting off */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    white-space: nowrap; /* Prevents title from wrapping */
+    overflow: hidden; /* Prevents text overflow */
+    text-overflow: ellipsis; /* Adds ellipsis for overflow */
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits the number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Hides extra text */
+    height: 60px; /* Ensures the description has a consistent height */
+}
+
+/* Wishlist icon positioning */
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.8rem; /* Increase size for better visibility */
+    z-index: 10; /* Ensure icon is above other content */
+    color: gray; /* Default color for the wishlist icon */
+}
+
+.wishlist-icon:hover {
+    color: red; /* Change color on hover to signify interactivity */
+}
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row on tablets */
+    }
+
+    .product-card {
+        padding: 0.9rem;
+        min-height: 300px; /* Adjust height for tablets */
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+        gap: 15px;
+    }
+
+    .product-card {
+        padding: 0.8rem;
+        min-height: 280px; /* Adjust height for mobile devices */
+    }
+
+    .product-card img {
+        max-height: 180px; /* Reduces image size on mobile devices */
+        object-fit: contain; /* Ensures image fits within its container */
+    }
+}
+
+/* For Very Small Mobile Devices */
+@media (max-width: 480px) {
+    .products {
+        grid-template-columns: 1fr; /* 1 item per row on very small screens */
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 0.6rem;
+        min-height: 250px; /* Adjust height for very small screens */
+    }
+
+    .product-card h3 {
+        font-size: 1rem;
+    }
+
+    .product-card p {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2; /* Limit description text to 2 lines */
+        height: 50px; /* Ensures description fits neatly */
+    }
+}

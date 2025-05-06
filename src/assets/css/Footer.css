@@ -1,0 +1,220 @@
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 50px 20px;
+    font-family: sans-serif;
+  }
+  
+  .footer-top {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-section {
+    flex: 1 1 250px;
+    min-width: 220px;
+  }
+  
+  .footer h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .footer h4 {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .footer p,
+  .footer small {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  
+  .newsletter {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  
+  .newsletter input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color: black;
+  }
+  
+  .newsletter button {
+    padding: 10px 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .footer-social {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    font-size: 20px;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    justify-content: flex-start; /* Added to align items to the start */
+  }
+  
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  
+  .social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+  }
+  
+  .footer-payments span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .payment-icons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .payment-icons img {
+    height: 30px;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .footer-bottom-text {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+  }
+  
+  .footer-bottom-text::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .currency-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    object-fit: contain;
+  }
+  
+  /* ✅ Responsive Design */
+  
+  /* ✅ Responsive Design */
+  @media (max-width: 1024px) {
+    .footer-row {
+      gap: 20px;
+    }
+  
+    .footer-social {
+      justify-content: flex-start;
+      margin-left: 0;
+    }
+  
+    .social-icon {
+      width: 25px; /* Reduced size of icons for better fit on medium screens */
+      height: 25px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-row {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .newsletter {
+      flex-direction: column;
+    }
+  
+    .newsletter input,
+    .newsletter button {
+      width: 100%;
+      border-radius: 4px;
+    }
+  
+    .footer-social {
+      justify-content: center; /* Center social icons */
+      margin-left: 0;
+    }
+  
+    .social-icon {
+      width: 30px; /* Adjusted size for smaller screens */
+      height: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      padding: 40px 15px;
+    }
+  
+    .footer h3 {
+      font-size: 16px;
+    }
+  
+    .footer h4 {
+      font-size: 14px;
+    }
+  
+    .footer-bottom-text {
+      font-size: 13px;
+    }
+  
+    .footer-social {
+      justify-content: center; /* Center social icons */
+      gap: 10px;
+    }
+  
+    .social-icon {
+      width: 25px; /* Further reduced size for mobile */
+      height: 25px;
+    }
+  }
