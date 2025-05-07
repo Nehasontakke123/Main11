@@ -11,7 +11,6 @@
     grid-template-columns: repeat(4, 1fr); /* 4 items per row by default */
     gap: 20px;
     justify-content: center;
-  
 }
 
 /* Product Card */
@@ -91,7 +90,7 @@
 /* For Mobile Devices */
 @media (max-width: 768px) {
     .products {
-        grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile */
         gap: 15px;
     }
 

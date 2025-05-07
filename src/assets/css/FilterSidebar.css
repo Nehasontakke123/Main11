@@ -30,6 +30,14 @@
   font-weight: bold;
   font-size: 0.9rem;
   cursor: pointer;
+ 
+}
+
+/* Group SHOW FILTER and RECOMMENDED together */
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Consistent spacing between buttons */
 }
 
 /* Sidebar Styles */
@@ -68,7 +76,10 @@
 .filter-item {
   border-bottom: 1px solid #e0e0e0;
   padding: 0.8rem 0;
+ 
 }
+
+
 
 .filter-title {
   display: flex;
@@ -119,7 +130,7 @@
 }
 
 
-/* Tablet *//* Tablet */
+/* Tablet */
 @media (max-width: 768px) {
   .filter-header {
     flex-direction: column;
@@ -166,9 +177,10 @@
   .filter-content {
     font-size: 0.85rem;
   }
+
 }
 
-/* Mobile *//* Mobile View - Updated */
+/* Mobile */
 @media (max-width: 480px) {
   .filter-wrapper {
     font-size: 0.85rem;
@@ -176,13 +188,16 @@
   }
 
   .filter-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-    padding: 0.8rem 0;
+    display: flex; /* Ensure flex layout */
+    align-items: center; /* Align items vertically */
+    gap: 0.4rem; /* Add spacing between items */
+    padding: 0.8rem 0; /* Adjust padding */
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+
+    /* New addition: Group SHOW FILTER and RECOMMENDED together */
+    justify-content: space-between; /* Distribute items evenly */
+   
   }
 
   .item-count {
@@ -198,7 +213,7 @@
     border: 1px solid #ddd;
     padding: 0.4rem 0.6rem;
     border-radius: 5px;
-    width: 100%;
+    width: auto; /* Allow them to take natural width */
     text-align: center;
   }
 
@@ -210,6 +225,13 @@
   .recommended {
     font-weight: 600;
     color: #222;
+  }
+
+  /* Group SHOW FILTER and RECOMMENDED together */
+  .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Add spacing between the two buttons */
   }
 
   .sidebar {
@@ -244,5 +266,29 @@
   .dropdown-item {
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
+  }
+}
+
+/* Desktop */
+/* Desktop */
+/* Desktop */
+@media (min-width: 769px) {
+  .filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute items across the header */
+    width: 100%;
+    position: relative;
+  }
+
+  .item-count {
+    flex: 0 0 auto;
+  }
+
+  .filter-controls {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
   }
 }

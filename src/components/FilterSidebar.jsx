@@ -85,28 +85,30 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
   return (
     <div className="filter-wrapper">
       <div className="filter-header">
-        <div className="item-count">{filteredProducts.length} ITEMS</div>
-        <button className="toggle-btn" onClick={toggleFilter}>
-          {isOpen ? '← HIDE FILTER' : '☰ SHOW FILTER'}
-        </button>
-
-        <div className="sort-dropdown">
-          <div className="recommended" onClick={handleSortClick}>
-            {selectedSortOption} ▼
-          </div>
-          {showSortDropdown && (
-            <div className="dropdown-menu">
-              {sortOptions.map((option, index) => (
-                <div
-                  key={index}
-                  className={`dropdown-item ${selectedSortOption === option ? 'active' : ''}`}
-                  onClick={() => handleSortSelect(option)}
-                >
-                  {selectedSortOption === option ? '✔️' : ''} {option}
-                </div>
-              ))}
+        {/* <div className="item-count">{filteredProducts.length} ITEMS</div> */}
+        {/* Group SHOW FILTER and RECOMMENDED together */}
+        <div className="filter-controls">
+          <button className="toggle-btn" onClick={toggleFilter}>
+            {isOpen ? '← HIDE FILTER' : '☰ SHOW FILTER'}
+          </button>
+          <div className="sort-dropdown">
+            <div className="recommended" onClick={handleSortClick}>
+              {selectedSortOption} ▼
             </div>
-          )}
+            {showSortDropdown && (
+              <div className="dropdown-menu">
+                {sortOptions.map((option, index) => (
+                  <div
+                    key={index}
+                    className={`dropdown-item ${selectedSortOption === option ? 'active' : ''}`}
+                    onClick={() => handleSortSelect(option)}
+                  >
+                    {selectedSortOption === option ? '✔️' : ''} {option}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
