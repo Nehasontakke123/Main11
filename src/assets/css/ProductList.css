@@ -105,16 +105,16 @@
     }
 }
 
-/* For Very Small Mobile Devices */
+/* For Very Small Mobile Devices *//* For Very Small Mobile Devices */
 @media (max-width: 480px) {
     .products {
-        grid-template-columns: 1fr; /* 1 item per row on very small screens */
+        grid-template-columns: repeat(2, 1fr); /* ✅ 2 cards per row on mobile */
         gap: 10px;
     }
 
     .product-card {
         padding: 0.6rem;
-        min-height: 250px; /* Adjust height for very small screens */
+        min-height: 240px;
     }
 
     .product-card h3 {
@@ -123,7 +123,7 @@
 
     .product-card p {
         font-size: 0.8rem;
-        -webkit-line-clamp: 2; /* Limit description text to 2 lines */
-        height: 50px; /* Ensures description fits neatly */
+        -webkit-line-clamp: 2;
+        height: 50px;
     }
 }

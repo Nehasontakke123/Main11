@@ -163,3 +163,4 @@ const FilterSidebar = ({ setSelectedFilters, setSelectedSort, selectedFilters = 
 };
 
 export default FilterSidebar;
+
