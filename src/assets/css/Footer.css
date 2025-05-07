@@ -218,3 +218,61 @@
       height: 25px;
     }
   }
+
+
+
+
+
+
+  /* Hide mobile collapsible by default */
+.footer-mobile {
+  display: none;
+}
+
+/* Desktop layout */
+.footer-desktop {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Media query for mobile */
+@media (max-width: 768px) {
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: block;
+  }
+
+  .footer-mobile details {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+  }
+
+  .footer-mobile summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .footer-mobile ul {
+    padding-left: 15px;
+    margin-top: 5px;
+    color: #ccc;
+  }
+
+  .footer-payments {
+    margin-top: 10px;
+  }
+
+  .payment-icons img {
+    width: 40px;
+    margin: 5px;
+  }
+
+  .social-icon {
+    width: 30px;
+    margin-right: 10px;
+  }
+}

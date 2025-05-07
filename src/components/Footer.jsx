@@ -7,9 +7,9 @@ import paypal from '../assets/images/paypal.png';
 import amex from '../assets/images/amex.png';
 import applepay from '../assets/images/applepay.png';
 import shop from '../assets/images/Shop-Pay.png';
-import instagram from '../assets/images/instagram.png'; // Add Instagram icon
-import linkedin from '../assets/images/in.png'; // Add LinkedIn icon
-import usdIcon from '../assets/images/usd.png'; // Add USD icon
+import instagram from '../assets/images/instagram.png';
+import linkedin from '../assets/images/in.png';
+import usdIcon from '../assets/images/usd.png';
 
 export default function Footer() {
   return (
@@ -31,15 +31,15 @@ export default function Footer() {
             <p>+44 221 133 5360</p>
             <p>customercare@mettamuse.com</p>
             <h4>Currency</h4>
-            <p><img src={usdIcon} alt="USD" className="currency-icon" />. USD</p>
+            <p><img src={usdIcon} alt="USD" className="currency-icon" /> USD</p>
             <small>
               Transactions will be completed in Euros and a currency reference is available on hover.
             </small>
           </div>
         </div>
 
-        {/* Links and Social & Payments */}
-        <div className="footer-row">
+        {/* Desktop View */}
+        <div className="footer-row footer-desktop">
           <div className="footer-section">
             <h3>metta muse</h3>
             <ul>
@@ -68,12 +68,8 @@ export default function Footer() {
           <div className="footer-section">
             <h3>Follow Us</h3>
             <div className="footer-social">
-              <span>
-                <img src={instagram} alt="Instagram" className="social-icon" />
-              </span>
-              <span>
-                <img src={linkedin} alt="LinkedIn" className="social-icon" />
-              </span>
+              <img src={instagram} alt="Instagram" className="social-icon" />
+              <img src={linkedin} alt="LinkedIn" className="social-icon" />
             </div>
             <div className="footer-payments">
               <span>metta muse ACCEPTS</span>
@@ -88,6 +84,53 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        {/* Mobile View */}
+        <div className="footer-mobile">
+          <details>
+            <summary>metta muse</summary>
+            <ul>
+              <li>About Us</li>
+              <li>Stories</li>
+              <li>Artisans</li>
+              <li>Boutiques</li>
+              <li>Contact Us</li>
+              <li>EU Compliances Docs</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Quick Links</summary>
+            <ul>
+              <li>Orders & Shipping</li>
+              <li>Join/Login as a Seller</li>
+              <li>Payment & Pricing</li>
+              <li>Return & Refunds</li>
+              <li>FAQs</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Follow Us</summary>
+            <div className="footer-social">
+              <img src={instagram} alt="Instagram" className="social-icon" />
+              <img src={linkedin} alt="LinkedIn" className="social-icon" />
+            </div>
+            <div className="footer-payments">
+              <span>metta muse ACCEPTS</span>
+              <div className="payment-icons">
+                <img src={gpay} alt="GPay" />
+                <img src={mastercard} alt="MasterCard" />
+                <img src={paypal} alt="PayPal" />
+                <img src={amex} alt="Amex" />
+                <img src={applepay} alt="Apple Pay" />
+                <img src={shop} alt="Shop Pay" />
+              </div>
+            </div>
+          </details>
+        </div>
       </div>
 
       <div className="footer-bottom">
@@ -96,3 +139,4 @@ export default function Footer() {
     </footer>
   );
 }
+
